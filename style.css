@@ -501,6 +501,7 @@ input[type='number'] {
   margin: 20% auto;
   padding: 30px 45px;
   width: 90%;
+  max-width: 1200px;
 }
 
 .modal__close {
@@ -517,7 +518,7 @@ input[type='number'] {
   height: 15px;
 }
 
-.modal__article {
+.modal__article-top {
   display: flex;
 }
 
@@ -525,9 +526,20 @@ input[type='number'] {
   cursor: pointer;
 }
 
+.modal__article-left {
+  width: 60%;
+  margin-right: 15px;
+}
+
+.modal__article-right {
+  width: 40%;
+}
+
 .modal__img {
   max-width: 300px;
 }
+
+
 
 /* hover */
 @media (min-width: 1024px) {
