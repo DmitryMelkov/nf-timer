@@ -141,7 +141,9 @@ input[type='number'] {
   width: 0;
   display: flex;
   align-items: center;
-  background-color: rgb(224, 214, 214);
+  background-color: white;
+  box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+  /* background-color: rgb(224, 214, 214); */
   height: 160px;
   border-radius: 100px;
   overflow: hidden;
@@ -225,12 +227,17 @@ input[type='number'] {
   border: none;
   border-radius: 100px;
   cursor: pointer;
-  background-color: grey;
-  transition: opacity 0.3s ease-in-out;
-}
+  background: linear-gradient(
+    170deg,
+    rgb(0 0 0 / 0%) 0%,
+    rgb(143 39 228 / 1%) 80%,
+    rgb(143 39 228 / 5%) 90%,
+    rgb(143 39 228 / 10%) 98%,
+    rgb(143 39 228 / 35%) 100%
+  );
+  box-shadow: 0 0 10px rgb(0 0 0 / 50%);
 
-.anim-monkey__btn:hover {
-  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .anim-monkey__btn-close {
