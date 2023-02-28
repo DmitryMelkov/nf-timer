@@ -42,32 +42,31 @@ const animMonkey = bodymovin.loadAnimation({
 const animAsteroid = bodymovin.loadAnimation({
   container: document.querySelector('.asteroid'),
   renderer: 'svg',
-  loop: true,
+  loop: 1,
   autoplay: true,
   path: './img-js/asteroid-exploration.json',
 });
 
-const animBoom = bodymovin.loadAnimation({
-  container: document.querySelector('.boom'),
-  renderer: 'svg',
-  loop: 2,
-  autoplay: true,
-  path: './img-js/particle-explosion.json',
-});
+setTimeout(() => {
+  const animBoom = bodymovin.loadAnimation({
+    container: document.querySelector('.boom'),
+    renderer: 'svg',
+    loop: 1,
+    autoplay: true,
+    path: './img-js/particle-explosion.json',
+  });
+}, 3000);
 
 const animMonkeyBtn = document.querySelector('.anim-monkey');
+const animMonkeyBtnClose = document.querySelector('.anim-monkey__btn-close');
 const animBoomEvent = document.querySelector('.boom-js');
 const animAsteroidEvent = document.querySelector('.asteroid-js');
 
 window.addEventListener('scroll', () => {
   if (window.pageYOffset > 500) {
     animMonkeyBtn.classList.add('active');
-    animBoomEvent.classList.add('active');
     animAsteroidEvent.classList.add('active');
-  } else {
-    animMonkeyBtn.classList.remove('active');
-    animBoomEvent.classList.remove('active');
-    animAsteroidEvent.classList.remove('active');
+    animBoomEvent.classList.add('active');
   }
 });
 
@@ -82,4 +81,20 @@ animMonkeyBtn.addEventListener('mouseover', () => {
 animMonkeyBtn.addEventListener('mouseout', () => {
   monkeyInner.classList.remove('active');
   monkeyContent.classList.remove('active');
+});
+
+animMonkeyBtnClose.addEventListener('click', () => {
+  animMonkeyBtn.classList.remove('active');
+});
+
+const modalClose = document.querySelector('.modal__close');
+const modalWindow = document.querySelector('.modal');
+const modalMore = document.querySelector('.anim-monkey__content-btn');
+
+modalMore.addEventListener('click', () => {
+  modalWindow.classList.add('open');
+});
+
+modalClose.addEventListener('click', () => {
+  modalWindow.classList.remove('open');
 });
